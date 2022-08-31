@@ -1,10 +1,12 @@
+Have deployed app to heroku link : https://coin-spaze-assignment.herokuapp.com/
+
 a)
 ## Build Instructions
     To Build app follow these steps:
     1) Clone the repository
     2) run "npm install" in cmd in root folder to install all the required dependencies
     3) run "npm run build" in cmd in root folder to build the project. The build will be available in the build folder. Use the build
-
+     
 b)
 ## Usage Instructions
     For First Time Usage:
@@ -17,6 +19,7 @@ b)
     1) run "npm start" in root cmd in root folder to start the server.
     2) Open http://localhost:3000/ on your browser to use the App 
 
+    Please Note: If there is problem in installing packages using npm install , please try deleting package-lock.json and try again
 
 c) 
 ## What else you would have implemented had you more time to work on it
@@ -28,6 +31,7 @@ c)
     5) Would have implemented Real To address checks using suitable library to verify that the To Address is valid.
     6) Would not have used material ui as the customization options and functionality are limited
     7) Would have setup tailwind css
+    8) Better Implementation of UI
 
 d)
 ## List down all assumptions you made while designing/implementing
