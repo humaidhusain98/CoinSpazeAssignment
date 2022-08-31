@@ -11,3 +11,83 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.frcc{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.fcfsfs{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+.frcfs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.bred{
+  border: 1px solid red;
+}
+
+.fccfs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.g15{
+  gap: 15px
+}
+
+.w200{
+  width: 200px;
+}
+
+.name{
+  width: 100px;
+}
+
+.token-obj{
+  width: 50px;
+}
+
+.red{
+  color: red;
+}
+
+
+.label{
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.text-field-cont{
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.descr{
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.btn-cont{
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+
+.ml15{
+  margin-left: 15px;
+}
