@@ -2,7 +2,7 @@ import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
 import Button from '@mui/material/Button';
 import styled from '@emotion/styled';
-import {  handlePaymentAPI } from '../../mockServer/mockServerData';
+import {  getTokenBalanceAPI, handlePaymentAPI } from '../../mockServer/mockServerData';
 import { useNavigate } from "react-router-dom";
 import ToAddressFieldDesktop from './components/desktop/ToAddressFieldDesktop';
 import TokenFieldDesktop from './components/desktop/TokenFieldDesktop';
@@ -107,7 +107,7 @@ export default function PaymentDialog(props) {
     setAmount("initialValue");
     setToAddress("initialValue");
     setTimeout(()=>{setDialogState(1)},1000);
-
+    setTokenSelected('');
   };
 
   //fields
@@ -118,7 +118,18 @@ export default function PaymentDialog(props) {
 
   // stores response
   const [response,setResponse] = React.useState(null);
-
+  
+  // token Balance
+  const [tokenBalance,setTokenBalance] = React.useState(0);
+  
+  React.useEffect(()=>{
+    if(tokenSelected){
+      getTokenBalanceAPI("4354tgrfh6y65ythgh56h6h",tokenSelected.tokenSymbol).then((bal)=>{
+        setTokenBalance(bal);
+      })
+    }
+    
+  },[tokenSelected])
 
   //buttonDisabled state
   const [buttonDisabled,setBtnDisabled] = React.useState(true);
@@ -128,7 +139,7 @@ export default function PaymentDialog(props) {
   React.useEffect(()=>{
   //checks all conditions if satisfied, makes the Submit Button Active
   const checkAllConditionsSatisfied = ()=>{
-    if(!toAddress || !tokenSelected || !amount){
+    if(!toAddress || !tokenSelected || !amount || tokenBalance<amount ){
       setBtnDisabled(true);
     }
     else if(isNaN(amount)===true || amount<=0  ){
@@ -141,7 +152,7 @@ export default function PaymentDialog(props) {
 
 
     checkAllConditionsSatisfied();
-  },[toAddress,tokenSelected,amount]);
+  },[toAddress,tokenSelected,amount,tokenBalance]);
 
   const handleSubmitClick=async()=>{
     console.log("Handle Submit");
@@ -241,6 +252,14 @@ export default function PaymentDialog(props) {
               setAmount={setAmount}
               />
 
+              {
+                tokenSelected && (
+                  <div className="bal ml50">
+                    Available {tokenSelected.tokenSymbol} Balance: {tokenBalance}
+                  </div>
+                )
+              }
+
               <DescriptionFieldDesktop 
               description={description} 
               setDescription={setDescription} 
@@ -272,6 +291,13 @@ export default function PaymentDialog(props) {
                  amount={amount}
                  setAmount={setAmount}
             />
+               {
+                tokenSelected && (
+                  <div className="bal ml15">
+                    Available {tokenSelected.tokenSymbol} Balance: {tokenBalance}
+                  </div>
+                )
+              }
          
             <DescriptionFieldMobile 
                description={description} 

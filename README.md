@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+a)
+## Build Instructions
+    To Build app follow these steps:
+    1) Clone the repository
+    2) run "npm install" in cmd in root folder to install all the required dependencies
+    3) run "npm run build" in cmd in root folder to build the project. The build will be available in the build folder. Use the build
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+b)
+## Usage Instructions
+    For First Time Usage:
+    1) Clone the repository
+    2) run "npm install" in cmd in root folder to install all the required dependencies
+    3) run "npm start" in root cmd in root folder to start the server.
+    4) Open http://localhost:3000/ on your browser to use the App 
 
-## Available Scripts
+    After Setting Up (Not first time usage):
+    1) run "npm start" in root cmd in root folder to start the server.
+    2) Open http://localhost:3000/ on your browser to use the App 
 
-In the project directory, you can run:
 
-### `npm start`
+c) 
+## What else you would have implemented had you more time to work on it
+    I would have implemented the following:
+    1) I would have implemented a Real Node.js server rather than mockServer with mockData
+    2) Would have added JWT issuing, signing and decoding. Would have sent the User data in JWT with 2 minutes expiry
+    3) Would have verified JWT before handlingPayment. Currently just checking if its present or not
+    4) Would have installed Redux, created User State and would have used it in entire app
+    5) Would have implemented Real To address checks using suitable library to verify that the To Address is valid.
+    6) Would not have used material ui as the customization options and functionality are limited
+    7) Would have setup tailwind css
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+d)
+## List down all assumptions you made while designing/implementing
+    The assumptions made while designing.
+    1) The user is already authenticated in the payment page and has all required user details like user-address 
+    2) Any jwtCookie passed is valid in handlePaymentAPI if jwtCookie is passed
+    3) Balance of Token in Normal units,Usually eth and similar assets return balance in Wei where  10^18 Wei= 1 Ether
+    4) There is no real server but mock server
+    5) While implementing test cases, purposely adding wrong data to get respective response status even though the fields do not give wrong data.
+    6) Payment gets confirmed in 2 seconds. Usually payments may take more than 2 seconds to complete  

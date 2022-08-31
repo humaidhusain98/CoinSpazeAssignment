@@ -20,6 +20,16 @@ export const getAllTokensAPI =()=>{
     ]
 } 
 
+export const getTokenBalanceAPI = async(address,symbol)=>{
+    if(symbol==='eth'){
+        return 22.52;
+    }
+    else if(symbol==='btc'){
+        return 2.583;
+    }
+
+}
+
 //JWT cookie
 //from addr, toAddr, amount, token,decimals
 export const handlePaymentAPI =  async(fromAddress,toAddress,tokenSymbol,tokenDecimals,amount,description,jwtCookie)=>{
